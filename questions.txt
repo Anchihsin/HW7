@@ -1,1 +1,19 @@
+- What is voltage?
+A measure of potential energy per unit charge of electrons, or something a physicist would call specific potential energy. Defined in the context of static electricity, voltage is the measure of work required to move a unit charge from one location to another, against the force which tries to keep electric charges balanced. In the context of electrical power sources, voltage is the amount of potential energy available (work to be done) per unit charge, to move electrons through a conductor.
 
+
+-What is resistance?
+This opposition to electric current depends on the type of material, its cross-sectional area, and its temperature. 
+
+
+
+-Is a short circuit an example of a closed or open circuit?
+
+Neither. A short circuit is an electric circuit offering little or no resistance to the flow of electrons. 
+
+
+-How can you determine if a cricuit is closed or open?
+An open circuit is one where the continuity has been broken by an interruption in the path for electrons to flow; a closed circuit is one that is complete, with good continuity throughout. 
+
+-Did you set up your computer to use the Feather?
+Yes
