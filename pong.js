@@ -217,7 +217,7 @@ function drawStuff() {
   fill(250)
 
   push();
-  fill(160, 200, 105)
+  fill(255)
   rect(paddle1.x, paddle1.y, paddle1.width,
     paddle1.length);
   rect(paddle2.x, paddle2.y, paddle2.width,
@@ -233,7 +233,7 @@ function drawStuff() {
   push();
   noFill();
   strokeWeight(4);
-  stroke(255);
+  stroke(100);
   rect(borders.leftx, borders.topy,
     borders.rightx - borders.leftx,
     borders.bottomy - borders.topy);
@@ -263,7 +263,7 @@ function drawStuff() {
 // should change this to randomize ball position and velocity each time so the game is more interesting!!
 function initializePositions() {
   ball.x = width / 2;
-  ball.y = height + 10;
+  ball.y = height + 20;
   ball.xvelocity = random(-5,5); // probably should randomize this somehow
   ball.yvelocity = random(-5,5);
 
