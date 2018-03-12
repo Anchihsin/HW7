@@ -1,4 +1,3 @@
-
 // the first section contains all the data variables we discussed
 // to keep track of the information we need to make the game work
 // the initial values are reset when initializePositions()
@@ -51,9 +50,9 @@ var keypress = {
 // the preload function is empty for now.  this is where you can load mp3 
 // sounds to play when the game state enters GAME OVER and POINT.  
 function preload() {
-  backgroundsound= loadSound('Electrical_Sweep-Sweeper-1760111493 (1).mp3 ');
-  pointsound = loadSound('ray_gun-Mike_Koenig-1169060422 (1).mp3 ');
-  gameoversound = loadSound('Bouncing Golf Ball-SoundBible.com-39306422 (1).mp3');
+  song = loadSound('fire.mp3');
+  pointsound = loadSound('teleport.mp3');
+  gameoversound = loadSound('swing.mp3');
 }
 
 function setup() {
@@ -155,11 +154,11 @@ function updateState() {
     // hint: what does the "constrain()" function do.
     if (ball.y < borders.topy) {
       ball.yvelocity = -ball.yvelocity;
-      backgroundsound.play();
+      song.play();
     }
     if (ball.y > borders.bottomy) {
       ball.yvelocity = -ball.yvelocity;
-      backgroundsound.play();
+      song.play();
     }
 
     // this checks if the ball goes out of bounds on the left or right.
@@ -171,7 +170,7 @@ function updateState() {
         (ball.y < (paddle2.y + paddle2.length))) {
         ball.xvelocity = -ball.xvelocity;
         song.play();
-      } else if (score.player1 >=2||score.player2 >=2) {
+      } else if (score.player1 >=5||score.player2 >=5) {
         GAMESTATE = 'GAMEOVER';
        } else {
         score.player1 = score.player1 + 1;
@@ -185,7 +184,7 @@ function updateState() {
         (ball.y < (paddle1.y + paddle1.length))) {
         ball.xvelocity = -ball.xvelocity;
         song.play();
-      } else if (score.player1 >=2||score.player2 >=2) {
+      } else if (score.player1 >=5||score.player2 >=5) {
         GAMESTATE = 'GAMEOVER';
       }else {
         score.player2 = score.player2 + 1;
@@ -214,7 +213,7 @@ function updateState() {
 function drawStuff() {
   background(200);
   // draw paddles
-  fill(250)
+  fill(100)
 
   push();
   fill(255)
@@ -233,7 +232,7 @@ function drawStuff() {
   push();
   noFill();
   strokeWeight(4);
-  stroke(100);
+  stroke(255);
   rect(borders.leftx, borders.topy,
     borders.rightx - borders.leftx,
     borders.bottomy - borders.topy);
@@ -263,9 +262,9 @@ function drawStuff() {
 // should change this to randomize ball position and velocity each time so the game is more interesting!!
 function initializePositions() {
   ball.x = width / 2;
-  ball.y = height + 20;
-  ball.xvelocity = random(-5,5); // probably should randomize this somehow
-  ball.yvelocity = random(-5,5);
+  ball.y = height + 10;
+  ball.xvelocity = random(0,10); // probably should randomize this somehow
+  ball.yvelocity = random(0,10);
 
   borders.leftx = 50;
   borders.rightx = width - 50;
@@ -276,4 +275,4 @@ function initializePositions() {
   paddle1.y = height / 2;
   paddle2.x = borders.rightx;
   paddle2.y = height / 2;
-} 
+}  
