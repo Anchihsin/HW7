@@ -151,7 +151,7 @@ function updateState() {
 
     // check top/bottom boundaries and reverse yvelocity 
     // you may want to modify this so that the paddles remain on the screen
-    // hint: what does the "constrain()" function do.
+    // hint: what does the "constr in()" function do.
     if (ball.y < borders.topy) {
       ball.yvelocity = -ball.yvelocity;
       song.play();
@@ -252,6 +252,7 @@ function drawStuff() {
     // text GAME OVER and WINNER!
     textAlign(CENTER);
     text('GAMEOVER', width / 2, height / 2);
+    text('player 1 win'); text('player 2 win');
     gameoversound.play(); 
 
 
